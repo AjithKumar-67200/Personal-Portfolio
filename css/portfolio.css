@@ -10,6 +10,7 @@
   --text-muted: rgba(245, 245, 247, 0.45);
   --accent: #e50914;
   --accent-glow: rgba(229, 9, 20, 0.45);
+  --accent-soft: rgba(229, 9, 20, 0.12);
   --blue: #2997ff;
   --blue-glow: rgba(41, 151, 255, 0.35);
   --purple: #bf5af2;
@@ -19,6 +20,7 @@
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --radius: 20px;
   --radius-sm: 12px;
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.45);
 }
 
 [data-theme="light"] {
@@ -31,6 +33,7 @@
   --text-muted: rgba(29, 29, 31, 0.45);
   --border: rgba(0, 0, 0, 0.08);
   --accent-glow: rgba(229, 9, 20, 0.2);
+  --accent-soft: rgba(229, 9, 20, 0.08);
   --blue-glow: rgba(41, 151, 255, 0.15);
 }
 
@@ -1126,6 +1129,7 @@ body:hover .cursor-glow { opacity: 0.6; }
   grid-template-columns: repeat(2, minmax(280px, 1fr));
   gap: 1.25rem;
   max-width: 900px;
+  margin: 0 auto;
 }
 
 .edu-square {
@@ -1137,13 +1141,18 @@ body:hover .cursor-glow { opacity: 0.6; }
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.24);
   transition: transform 0.35s var(--ease-out), border-color 0.35s, box-shadow 0.35s;
 }
 
 .edu-square:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.18);
   box-shadow: var(--shadow-lg);
+}
+
+.edu-square.reveal.visible:hover {
+  transform: translateY(-6px);
 }
 
 .edu-square-icon {
