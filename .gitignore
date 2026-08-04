@@ -1,2 +1,11 @@
+﻿# legacy tooling
 resume/tools/
 resume/generate_resume.py
+
+# Next.js source build artifacts
+site/node_modules/
+site/.next/
+site/out/
+site/.vercel/
+site/*.log
+site/.env*.local

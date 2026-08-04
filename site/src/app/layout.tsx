@@ -22,7 +22,10 @@ const geistMono = localFont({
   display: "swap",
 });
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ajithkumar-67200.github.io/Personal-Portfolio/"),
   applicationName: siteConfig.siteName,
   title: {
     default: `${siteConfig.siteName} | ${siteConfig.title}`,
@@ -40,14 +43,14 @@ export const metadata: Metadata = {
     "React",
     "Portfolio",
   ],
-  manifest: "/site.webmanifest",
+  manifest: `${basePath}/site.webmanifest`,
   icons: {
     icon: [
-      { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: `${basePath}/favicon.svg`, type: "image/svg+xml" },
+      { url: `${basePath}/favicon-32x32.png`, sizes: "32x32", type: "image/png" },
+      { url: `${basePath}/favicon-16x16.png`, sizes: "16x16", type: "image/png" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [{ url: `${basePath}/apple-touch-icon.png`, sizes: "180x180" }],
   },
   openGraph: {
     type: "website",
@@ -83,9 +86,9 @@ export default function RootLayout({
         <SkipLink />
         <Navbar />
         <SocialSidebar />
-        <main id="main" className="relative min-h-screen w-full">
+        <div id="main" className="relative min-h-screen w-full">
           {children}
-        </main>
+        </div>
         <SiteFooter />
         <BackToTop />
       </body>

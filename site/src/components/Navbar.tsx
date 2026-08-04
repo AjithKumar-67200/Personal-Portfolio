@@ -53,7 +53,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-4">
             <a
-              href={siteConfig.resumePath}
+              href={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${siteConfig.resumePath}`}
               download={siteConfig.resumeFileName}
               className="hidden items-center rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[10px] font-bold text-white transition-all hover:scale-105 hover:bg-white/20 sm:inline-flex"
             >
