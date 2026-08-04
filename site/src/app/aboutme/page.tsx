@@ -62,7 +62,7 @@ export default function AboutPage() {
                 />
                 <div className="relative h-64 w-64 transform-gpu overflow-hidden rounded-full bg-white/10 p-[3px] transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:border-white/40 group-hover:shadow-[0_0_60px_rgba(255,255,255,0.2)] md:h-80 md:w-80">
                   <Image
-                    src={siteConfig.profileImage}
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${siteConfig.profileImage}`}
                     alt={`${siteConfig.name} — ${siteConfig.title}`}
                     width={320}
                     height={320}
