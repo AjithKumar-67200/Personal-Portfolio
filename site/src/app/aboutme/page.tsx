@@ -55,21 +55,27 @@ export default function AboutPage() {
             </div>
 
             <div className="flex w-full flex-col items-center gap-12 lg:w-[35%] lg:items-end">
-              <div className="group relative">
+              <div className="group relative w-full max-w-sm md:max-w-md">
                 <div
-                  className="absolute inset-0 scale-75 rounded-full bg-white/20 opacity-50 blur-[100px] transition-all duration-1000 group-hover:scale-110 group-hover:opacity-100"
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-[60%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/[0.05] blur-[90px]"
                   aria-hidden="true"
                 />
-                <div className="relative h-64 w-64 transform-gpu overflow-hidden rounded-full bg-white/10 p-[3px] transition-all duration-500 ease-out group-hover:scale-[1.02] group-hover:border-white/40 group-hover:shadow-[0_0_60px_rgba(255,255,255,0.2)] md:h-80 md:w-80">
-                  <Image
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${siteConfig.profileImage}`}
-                    alt={`${siteConfig.name} — ${siteConfig.title}`}
-                    width={320}
-                    height={320}
-                    priority
-                    className="h-full w-full rounded-full object-cover object-top grayscale brightness-75 transition-all duration-700 group-hover:grayscale-0 group-hover:brightness-110"
-                  />
-                </div>
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${siteConfig.profileImage}`}
+                  alt={`${siteConfig.name} — ${siteConfig.title}`}
+                  width={640}
+                  height={853}
+                  priority
+                  className="relative z-10 h-auto w-full object-contain brightness-[0.95] contrast-[1.04] transition-all duration-700 group-hover:brightness-110"
+                  style={{
+                    maskImage:
+                      "linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 6%, #000 88%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%), linear-gradient(to bottom, transparent 0%, #000 6%, #000 88%, transparent 100%)",
+                    maskComposite: "intersect",
+                    WebkitMaskComposite: "source-in",
+                  }}
+                />
               </div>
 
               {educationItems.map((item) => (
